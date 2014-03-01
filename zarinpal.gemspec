@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Arash Mousavi"]
   spec.email         = ["mousavi.arash@gmail.com"]
   spec.summary       = %q{A gem to to send and verify payments with Zarinpal}
-  spec.description   = %q{A gem to to send and verify payments with Zarinpal}
+  spec.description   = %q{A gem to to send and verify payments with Zarinpal. Zarinpal is an Iranina provider.}
   spec.homepage      = "http://github.com/arashm/zarinpal"
   spec.license       = "MIT"
 
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'savon', ['>= 2.0.0']
+  spec.add_dependency 'savon', ['~> 2.0']
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
