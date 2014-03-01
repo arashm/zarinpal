@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Zarinpal::VERSION
   spec.authors       = ["Arash Mousavi"]
   spec.email         = ["mousavi.arash@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A gem to to send and verify payments with Zarinpal}
+  spec.description   = %q{A gem to to send and verify payments with Zarinpal}
+  spec.homepage      = "http://github.com/arashm/zarinpal"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "yard"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "listen"
