@@ -3,13 +3,13 @@ require 'spec_helper'
 describe Zarinpal do
   before do
     Zarinpal.configure do |config|
-      config.merchant_id = '52fbc7f4-3ca4-4b40-88ee-287f5ee8a9d4'
+      config.merchant_id = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
       config.callback_url = 'http://www.m0b.ir/verify.php'
     end
   end
 
   it 'responses to merchant_id' do
-    expect(Zarinpal.configuration.merchant_id).to eq('52fbc7f4-3ca4-4b40-88ee-287f5ee8a9d4')
+    expect(Zarinpal.configuration.merchant_id).to eq('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')
   end
 
   it 'responses to client with default value' do

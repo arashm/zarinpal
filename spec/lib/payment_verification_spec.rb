@@ -15,7 +15,7 @@ describe Zarinpal::PaymentVerification, focus: true do
     savon.mock!
 
     Zarinpal.configure do |config|
-      config.merchant_id = '52fbc7f4-3ca4-4b40-88ee-287f5ee8a9d4'
+      config.merchant_id = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
     end
   end
 
