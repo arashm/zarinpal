@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Zarinpal::PaymentVerification, focus: true do
+describe Zarinpal::PaymentVerification do
   include Savon::SpecHelper
 
   let(:pv) {
@@ -22,7 +22,7 @@ describe Zarinpal::PaymentVerification, focus: true do
   after(:all) { savon.unmock! }
 
   it 'successfully verify the request' do
-    message = {"MerchantID"=>"52fbc7f4-3ca4-4b40-88ee-287f5ee8a9d4", "Authority"=>'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX', "Amount"=>10000}
+    message = {"MerchantID"=>"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "Authority"=>'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX', "Amount"=>10000}
 
     savon.expects(:payment_verification).with(message: message ).returns('<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://zarinpal.com/">
       <SOAP-ENV:Body>

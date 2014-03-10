@@ -5,6 +5,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'zarinpal'
+require 'pry'
 require "savon/mock/spec_helper"
 
 RSpec.configure do |config|
