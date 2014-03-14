@@ -2,6 +2,9 @@
 
 A gem to to send and verify payments with [Zarinpal](http://zarinpal.com). Zarinpal is an Iranian provider. 
 
+[![Code Climate](https://codeclimate.com/github/arashm/zarinpal.png)](https://codeclimate.com/github/arashm/zarinpal)
+[![Build Status](https://travis-ci.org/arashm/zarinpal.png?branch=master)](https://travis-ci.org/arashm/zarinpal)
+
 ## Installation
 
 Add this line to your application's Gemfile:
