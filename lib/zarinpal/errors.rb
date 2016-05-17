@@ -5,13 +5,13 @@ module Zarinpal
     IDS = {
       '-1'  => 'Insufficient information',
       '-2'  => 'IP or Merchant Code is not correct',
-      '-3'  => 'Amount should be greater than 1000',
-      '-4'  => 'Insufficient',
-      '-11' => 'Requested response didn\'t find',
+      '-3'  => 'Amount should be greater than 1000 IRR',
+      '-4'  => 'The verification level should be above silver',
+      '-11' => 'Couldn\'t find the requested payment',
       '-21' => 'No financial action found for this transaction',
       '-22' => 'Unsuccessful transaction',
-      '-33' => 'Transaction price is not equal to payed amount',
-      '-54' => 'The request had archived'
+      '-33' => 'Transaction amount is not equal to payed amount',
+      '-54' => 'The payment request has been archived'
     }
   end
 end
