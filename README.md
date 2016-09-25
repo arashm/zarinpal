@@ -62,7 +62,7 @@ Sending payment request:
 
 ```ruby
 payment_request = Zarinpal::PaymentRequest.new({
-    amout: 10000,
+    amount: 10000,
     description: 'Sth cool',
     email: 'example@example.com',
     mobile: '09XXXXXXX'
