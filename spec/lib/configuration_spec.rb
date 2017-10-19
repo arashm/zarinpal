@@ -9,10 +9,14 @@ describe Zarinpal do
   end
 
   it 'responses to merchant_id' do
-    expect(Zarinpal.configuration.merchant_id).to eq('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')
+    expect(Zarinpal.configuration.merchant_id).to eq(
+      'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+    )
   end
 
   it 'responses to client with default value' do
-    expect(Zarinpal.configuration.client).to eq('https://de.zarinpal.com/pg/services/WebGate/wsdl')
+    expect(Zarinpal.configuration.client).to eq(
+      'https://de.zarinpal.com/pg/services/WebGate/wsdl'
+    )
   end
 end

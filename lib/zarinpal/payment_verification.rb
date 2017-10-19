@@ -1,9 +1,11 @@
-require "savon"
+# frozen_string_literal: true
+
+require 'savon'
 
 module Zarinpal
-  # Verifyes transaction with Zarinpal
+  # Verifies transaction with Zarinpal
   class PaymentVerification
-    attr_reader   :status, :refid
+    attr_reader :status, :refid
 
     # @note A hash of parameters should be send to this class
     # @example
@@ -26,8 +28,9 @@ module Zarinpal
       response = @client.call :payment_verification, message: {
         'MerchantID' => Zarinpal.configuration.merchant_id,
         'Authority' => @authority,
-        'Amount' => @amount
+        'Amount' => @amount,
       }
+
       @response.validate(response.body)
     end
   end

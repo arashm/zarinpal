@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Zarinpal
   # List of status code errors and description
   module Errors
@@ -11,7 +13,7 @@ module Zarinpal
       '-21' => 'No financial action found for this transaction',
       '-22' => 'Unsuccessful transaction',
       '-33' => 'Transaction amount is not equal to payed amount',
-      '-54' => 'The payment request has been archived'
-    }
+      '-54' => 'The payment request has been archived',
+    }.freeze
   end
 end

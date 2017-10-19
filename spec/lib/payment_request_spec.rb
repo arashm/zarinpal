@@ -29,12 +29,23 @@ describe Zarinpal::PaymentRequest do
   end
 
   it 'successfully calls the server' do
-    message = {"MerchantID"=>"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "Amount"=>10000, "Description"=>"sth for test", "Email"=>"", "Mobile"=>"", "CallbackURL"=>"http://example.com/callback_url"}
+    message = {
+      "MerchantID"=>"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+      "Amount"=>10000,
+      "Description"=>"sth for test",
+      "Email"=>"",
+      "Mobile"=>"",
+      "CallbackURL"=>"http://example.com/callback_url"
+    }
 
-    savon.expects(:payment_request).with(message: message ).returns('<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://zarinpal.com/"><SOAP-ENV:Body><ns1:PaymentRequestResponse><ns1:Status>101</ns1:Status><ns1:Authority>"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</ns1:Authority></ns1:PaymentRequestResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>')
+    savon
+      .expects(:payment_request)
+      .with(message: message )
+      .returns(
+        '<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://zarinpal.com/"><SOAP-ENV:Body><ns1:PaymentRequestResponse><ns1:Status>101</ns1:Status><ns1:Authority>"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</ns1:Authority></ns1:PaymentRequestResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>'
+      )
 
     response = zarin.call
     expect(response).to be_valid
   end
-
 end

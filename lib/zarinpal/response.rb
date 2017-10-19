@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 module Zarinpal
-  # This classs manages the returned response from PaymentVerification and
+  # This class manages the returned response from PaymentVerification and
   # PaymentRequest. If the response is not valid (the status is not code is 100 or 101)
   # it will raise an error with the corresponding description.
   class Response
-
     class ResponseError < RuntimeError; end
 
     attr_reader :response, :authority, :status, :refid
@@ -19,7 +20,7 @@ module Zarinpal
       @response = response
       perform_validation
 
-      return self
+      self
     end
 
     # Returns the validation status of response
@@ -29,7 +30,8 @@ module Zarinpal
       @valid
     end
 
-    private
+  private
+
     def perform_validation
       raise ArgumentError, 'not a valid response' if @response.nil?
 
@@ -38,13 +40,12 @@ module Zarinpal
       @status    = body[:status].to_i
       @refid     = body[:ref_id]
 
-      if not ['100', '101'].include?(body[:status])
+      if !%w(100 101).include?(body[:status])
         @valid = false
         raise ResponseError, Errors::IDS[body[:status]]
       else
         @valid = true
       end
-
     end
   end
 end

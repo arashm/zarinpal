@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'zarinpal/version'
 require 'zarinpal/payment_request'
 require 'zarinpal/response'
@@ -32,6 +34,5 @@ module Zarinpal
     def initialize
       @client = 'https://de.zarinpal.com/pg/services/WebGate/wsdl'
     end
-
   end
 end

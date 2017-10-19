@@ -1,7 +1,10 @@
-require "savon"
+# frozen_string_literal: true
+
+require 'savon'
 
 module Zarinpal
   # Sends a payment request to zarinpal
+  #
   # @return [Zarinpal::Response]
   class PaymentRequest
     attr_accessor :amount, :description, :email, :mobile
@@ -35,7 +38,7 @@ module Zarinpal
         'Description' => @description,
         'Email' => @email,
         'Mobile' => @mobile,
-        'CallbackURL' => Zarinpal.configuration.callback_url
+        'CallbackURL' => Zarinpal.configuration.callback_url,
       }
 
       @response.validate(response.body)
